@@ -1,21 +1,6 @@
-const EventEmitter = require('events').EventEmitter;
-
-class GeekTime extends EventEmitter {
-    constructor(){
-        super();
-        setInterval(() => {
-            this.emit('haveNewLesson', {
-                price: Math.random()*100,
-            })
-        }, 3000);
-    }
-}
-
-const myNotice = new GeekTime;
+const myNotice = require('./lib');
 
 myNotice.addListener('haveNewLesson', res => {
-    console.log(' res', res);
-    console.log(' res.price', res.price);
     if (res.price < 60) {
         console.log('买它', res.price)
     } else {
