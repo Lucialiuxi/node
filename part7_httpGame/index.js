@@ -3,7 +3,7 @@ const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
 
-const game = require('./game');
+const game = require('./pub/game');
 
 let playerWin = 0;
 let playerLastAction = undefined;
@@ -20,7 +20,7 @@ http.createServer(function(request, response) {
         return;
     }
     if (parseUrl.pathname== "/") {
-        fs.createReadStream(__dirname + "/index.html")
+        fs.createReadStream(__dirname + "/pub/index.html")
         .pipe(response);
     }
 
