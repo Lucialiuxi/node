@@ -3,7 +3,9 @@ const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
 
-const game = require('./pub/game');
+const game = require('../pub/game');
+const hmltDir = require('../pub/method').getHtmlDirname(__dirname);
+
 
 let playerWin = 0;
 let playerLastAction = undefined;
@@ -20,8 +22,7 @@ http.createServer(function(request, response) {
         return;
     }
     if (parseUrl.pathname== "/") {
-        fs.createReadStream(__dirname + "/pub/index.html")
-        .pipe(response);
+        fs.createReadStream(hmltDir).pipe(response);
     }
 
     if (playerWin >= 3) { // 电脑连续输了3次
