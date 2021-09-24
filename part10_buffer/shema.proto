@@ -1,0 +1,5 @@
+message Test {
+    required float num = 1;
+    required string payload = 2;
+    required int32 id = 3;
+}
