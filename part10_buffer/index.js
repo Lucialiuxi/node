@@ -4,7 +4,7 @@ const protobuf = require('protocol-buffers');
 const messages = protobuf(fs.readFileSync(__dirname + '/shema.proto', 'utf-8'));
 
 const obj = {
-    num: 3,
+    num: 30.4,
     payload: '123',
     id: 1
 };
@@ -15,4 +15,4 @@ console.log(buf); // 编码后
 
 const debuf = messages.Test.decode(buf);
 
-console.log(debuf); // 解码后
+console.log(debuf); // 解码后【num浮点数会有精度问题存在】
