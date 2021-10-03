@@ -1,6 +1,6 @@
-const koa = require('koa');
 const mount = require('koa-mount');
 const static = require('koa-static');
+const koa = require('koa');
 const rpcClient = require('./client');
 const template = require('./template');
 

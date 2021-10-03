@@ -14,7 +14,6 @@ const easySock = new EasySock({
 });
 
 easySock.encode = function(data, seq) {
-    console.log('encode---sdgawb')
     const body = schemas.ColumnRequest.encode(data);
 
     const head = Buffer.alloc(8);
@@ -25,7 +24,6 @@ easySock.encode = function(data, seq) {
 };
 
 easySock.decode = function(buffer) {
-    console.log('decode---sdgawb')
     const seq = buffer.readInt32BE();
     const body = schemas.ColumnResponse.decode(buffer.slice(8));
 
@@ -39,11 +37,8 @@ easySock.isReceiveComplete = function(buffer) {
     if (buffer.length < 8) { // 还未接收完
         return 0;
     }
-    console.log(buffer.toString())
     const bodyLength = buffer.readInt32BE(4);
-    console.log('bodyLength--', bodyLength)
     if (buffer.length >= bodyLength + 8) { // 接收完了
-        console.log('接收完了')
         return bodyLength + 8;
     } else {
         return 0;
