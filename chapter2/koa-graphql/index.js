@@ -18,12 +18,5 @@ app.use(
     ),
 );
 
-// app.use(
-//     graphqlHTTP({
-//         schema,
-//         rootValue: rootComment,
-//     }),
-// );
-
 
 app.listen(3003); // localhost:3003/graphql?query={comment{name}}
