@@ -51,18 +51,16 @@ const schema = buildSchema(`
     }
 `);
 
-const rootComment = {
-    comment: () => Object.keys(mockData).map(key => mockData[key]),
-    praise: (id) => {  
-        mockData[id].praiseNum++;
-        return mockData[id].praiseNum;
-    },
-};
+schema.getQueryType().getFields().comment.resolve = () => {
+    
+    return Object.keys(mockDatabase).map(key=> {
+        return mockDatabase[key];
+    })
+}
+schema.getMutationType().getFields().praise.resolve = (args0, { id }) => {
+    mockDatabase[id].praiseNum++;
 
-// 等同于 rootComment的comment
-// schema.getQueryType().getFields().comment.resolve = () => {
-//     return Object.keys(mockData).map(key => mockData[key]);
-// }
+    return mockDatabase[id].praiseNum
+}
 
-
-module.exports = { schema, rootComment };
+module.exports = schema;

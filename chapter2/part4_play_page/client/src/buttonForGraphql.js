@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 export class ButtonForGraphql extends React.Component {
     constructor(props) {
@@ -7,22 +6,19 @@ export class ButtonForGraphql extends React.Component {
     };
 
     changePraiseNumHandle = () => {
-        axios({
-            method: 'post',
-            url: '/api',
+
+        fetch("./api", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+              'content-type': 'application/json'
             },
-            data: {
-                query: 'mutations{praiseNum(id: 3)}'
-            },
-            proxy: {
-                host: '127.0.0.1',
-                port: 3000,
-            },
-        }).then((res) => {
-            console.log(res);
-        });
+            body: JSON.stringify({
+              "query": "mutation { praise(id: 1) }"
+            })
+          }).then(res => res.json())
+            .then(res => {
+             console.log(res)
+            })
     };
 
     render() {
