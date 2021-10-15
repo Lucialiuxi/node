@@ -17,7 +17,7 @@ a {
     margin-bottom: 1em;
 }
 #messages {
-    width: 690px;
+    /* width: 690px; */
     height: 300px;
     overflow: auto;
     background-color: #eee;
@@ -30,11 +30,14 @@ input {
     line-height: 30px;
     box-sizing: border-box;
 }
+#send-form {
+    display: flex;
+}
 #send-message {
-    width: 70%;
+    flex: 0.75;
 }
 #send-button {
-    width: 15%;
+    flex: 0.15;
 }
 #help {
     margin-top: 20px;

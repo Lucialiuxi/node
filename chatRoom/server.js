@@ -20,15 +20,15 @@ function send404(response) {
 // 提供文件数据服务
 function sendFile(response, filePath, fileContents) {
     // path.basename 返回路径中的最后一部分
-    response.writeHead(200, { 'Content-Type': mime.lookup(path.basename(filePath))});
+    response.writeHead(200, { 'Content-Type': mime.getType(path.basename(filePath))});
     response.end(fileContents);
 }
-
 // 提供静态文件服务
 function serveStatic(response, cache, absPath) {
-    if(cache[absPath]) { // 检查文件是否缓存在内存中
+    if(cache[absPath]==3) { // 检查文件是否缓存在内存中
         sendFile(response, absPath, cache[absPath]); // 从内存中返回
     } else {
+        console.log(99999)
         // 检测给定的路径absPath是否存在。
         fs.exists(absPath, (exist) => {
             if (exist) {
@@ -51,14 +51,14 @@ function serveStatic(response, cache, absPath) {
 var server = http.createServer(function(request, response) {
     var filePath = false;
     if (request.url == '/') {
-        filePath = 'public/index.html'; // 确定返回的默认HTML文件
+        filePath = '/public/index.html'; // 确定返回的默认HTML文件
     } else {
-        filePath = 'public' + request.url; // 将URL路径转为文件的相对路径
+        filePath = '/public' + request.url; // 将URL路径转为文件的相对路径
     }
     var absPath = './' + filePath;
     serveStatic(response, cache, absPath); // 返回静态文件
 });
 
 server.listen(3000, () => {
-    console.log('服务监听3000端口');
+    console.log('服务监听3000端口11');
 })

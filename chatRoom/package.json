@@ -2,17 +2,30 @@
   "name": "chatroom",
   "version": "1.0.0",
   "description": "Minimalist multiroom chat server",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mime": "^2.5.2",
     "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": ["src/"],
+    "ignore": ["node_modules/*"],
+    "script": "server.js",
+    "options": {
+      "extensions": ["js", "jsx", "html"],
+      "exec": "node"
+    }
   }
 }
