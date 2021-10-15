@@ -1,0 +1,43 @@
+body {
+    padding: 50px;
+    font: 16px 'lucida Grande', Helvetica, Artial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+#content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#room {
+    background-color: #ddd;
+    margin-bottom: 1em;
+}
+#messages {
+    width: 690px;
+    height: 300px;
+    overflow: auto;
+    background-color: #eee;
+    margin-bottom: 1em;
+    margin-right: 10px;
+}
+
+input {
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+#send-message {
+    width: 70%;
+}
+#send-button {
+    width: 15%;
+}
+#help {
+    margin-top: 20px;
+    color: #5d5b5b;
+    font-size: 14px;
+}
