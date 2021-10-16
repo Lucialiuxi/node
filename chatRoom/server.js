@@ -28,7 +28,6 @@ function serveStatic(response, cache, absPath) {
     if(cache[absPath]==3) { // 检查文件是否缓存在内存中
         sendFile(response, absPath, cache[absPath]); // 从内存中返回
     } else {
-        console.log(99999)
         // 检测给定的路径absPath是否存在。
         fs.exists(absPath, (exist) => {
             if (exist) {

@@ -86,7 +86,7 @@
   * @param {*} currentRoom 
   */
  function handleNameChangeAttempts(socket, nickNames, namesUsed, currentRoom) {
-     // 添加 nameAttempt 事件的监听器
+     // 添加 nameAttempt 【更名请求事件】的监听器
     socket.on('nameAttempt', function(name) {
 
         // 昵称不能以Guest开头
@@ -111,6 +111,7 @@
                     name,
                 });
 
+                // Socket.IO的broadcast函数是用来转发消息的
                 socket.broadcast.on(currentRoom[socket.id]).emit('message', {
                     text: '昵称' + previousName + '更改为' +name + '.',
                 });
@@ -127,3 +128,54 @@
 
     });
  }
+
+ /**
+  * 发送聊天消息 【用户发射一个事件，表明消息是从哪个房间发出来的，以及消息的内容是什么；然后服务器将这个消息转发给同一个房间的所有用户】
+  * @param {*} socket 
+  * @param {*} nickNames 储存用户昵称的 {socketId: name}
+  */
+ function handleMessageBroadcasting(socket, nickNames){
+     // 添加 message 【发送聊天消息】事件的监听器
+    socket.on('message', function(message) {
+        socket.broadcast.to(message.room).emit('message', {
+            text: nickNames[socket.id] + ': ' + message.text,
+        })
+    });
+ };
+
+ /**
+  * 加入/创建房间 【添加用户加入已有房间的逻辑，如果房间还没有的话，则创建一个放】
+  * @param {*} socket 
+  * @param {*} currentRoom 
+  */
+ function handleRoomJoining(socket, currentRoom) {
+    // 添加 join 【创建/加入房间】事件的监听器
+    socket.on('join', function(room) {
+        socket.leave(currentRoom[socket.id]);
+        joinRoom(socket, room.newRoom);
+    });
+}
+
+
+/**
+ * 用户断开连接 【当用户离开聊天程序时，从nickNames和namesUsed中移除用户的昵称】
+ * @param {*} socket 
+ * @param {*} namesUsed 保存已经被占用的昵称 string[]
+ * @param {*} nickNames 储存用户昵称的 {socketId: name}
+ */
+function handleClientDisconnection(socket, namesUsed, nickNames) {
+    socket.on('disconnect', function() {
+        let nameIndex = namesUsed.indexOf(nickNames[socket.id]);
+        delete namesUsed[nameIndex];
+        delete nickNames[socket.id];
+    });
+};
+
+module.exports = {
+    assignGuestName,
+    joinRoom,
+    handleNameChangeAttempts,
+    handleMessageBroadcasting,
+    handleRoomJoining,
+    handleClientDisconnection,
+};
