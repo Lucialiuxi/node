@@ -11,12 +11,13 @@ function divSystemContentElement(message) {
 
 // 处理原始的用户输入
 function processUserInput(chatApp, socket) {
+    console.log('处理原始的用户输入', socket.id)
     let message = $('#send-message').val();
     let systemMessage;
 
     console.log('处理原始的用户输入--message', message);
 
-    if (message.chatAt(0) == '/') { // 如果用户输入的内容跟以斜杠开头，将其视为聊天命令
+    if (message.charAt(0) == '/') { // 如果用户输入的内容跟以斜杠开头，将其视为聊天命令
         systemMessage = chatApp.processCommand(message);
         if(systemMessage) {
             $('#messages').append(divSystemContentElement(systemMessage));
@@ -27,7 +28,7 @@ function processUserInput(chatApp, socket) {
             $('#room').text(),
             message,
         );
-        $('#messages').append(divSystemContentElement(systemMessage));
+        $('#messages').append(divSystemContentElement(message));
         $('#messages').scrollTop($('#message').prop('scrollHeight'));
 
     }
@@ -39,7 +40,6 @@ function processUserInput(chatApp, socket) {
 
 // 客户端程序初始化逻辑
 let socket = io.connect();
-console.log('客户端程序初始化逻辑',io.sockets.adapter.rooms)
 
 $(document).ready(function(){
 
@@ -54,21 +54,21 @@ $(document).ready(function(){
         } else {
             message = result.message;
         }
-        $('$messages').append(divSystemContentElement(message));
+        $('#messages').append(divSystemContentElement(message));
     });
 
 
     // 添加房间变更的事件监听器 and显示房间变更结果
     socket.on('joinResult', function(result) {
-        $('room'.text(result.room));
-        $('#messages').append(divSystemContentElement('已更换聊天室.'));
+        $('#room').text(result.room);
+        $('#messages').append(divSystemContentElement('您已更换聊天室.'));
     });
 
 
 
     // 显示接收到的消息
     socket.on('message', function(message) {
-        let newElement = $('<div></div>'.text(message.test));
+        let newElement = $('<div></div>').text(message.test);
         $('#message').append(newElement);
     });
 
@@ -102,7 +102,8 @@ $(document).ready(function(){
     $('#send-message').focus();
 
     // 提交表单可以发送聊天消息
-    $('#send-form').submit(function(){
+    $('#send-button').click(function(){
+        console.log('提交表单可以发送聊天消息')
         processUserInput(chatApp, socket);
         return false;
     });

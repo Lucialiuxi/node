@@ -10,11 +10,14 @@ a {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid #e1dbdb
 }
 
 #room {
     background-color: #ddd;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
+    font-size: 16px;
+    font-weight: bolder;
 }
 #messages {
     /* width: 690px; */
@@ -35,6 +38,8 @@ input {
 }
 #send-message {
     flex: 0.75;
+    margin-bottom: 1em;
+    margin-right: 1em;
 }
 #send-button {
     flex: 0.15;
@@ -44,3 +49,22 @@ input {
     color: #5d5b5b;
     font-size: 14px;
 }
+
+#room-list {
+    float: right;
+    width: 100px;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #c2c0c0;
+    margin-top: -1px;
+}
+
+#room-list div {
+    border-bottom: 1px solid #eee;
+}
+
+#room-list div:hover {
+   background-color: #ddd;
+}
+
+

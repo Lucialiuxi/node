@@ -31,7 +31,7 @@ exports.listen = function(server) {
         // 处理用户的消息，更名，以及聊天室的创建和变更
         handleMessageBroadcasting(socket, nickNames);
         handleNameChangeAttempts(socket, nickNames, namesUsed, currentRoom);
-        handleRoomJoining(socket, currentRoom, io);
+        handleRoomJoining(socket, currentRoom,nickNames, io);
 
         // 用户发出请求时，向其提供已经被占用的聊天室的列表
         socket.on('rooms', function() {

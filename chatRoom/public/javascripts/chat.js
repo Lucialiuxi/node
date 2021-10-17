@@ -1,6 +1,5 @@
 const Chat = function(socket) {
     this.socket = socket;
-    console.log('789789789',this);
 };
 
 // 发送聊天消息

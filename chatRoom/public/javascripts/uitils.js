@@ -20,7 +20,7 @@
 
      // 把用户昵称跟客户端连接ID关联上
     nickNames[socket.id] = name;
-    console.log('----nickNames--', nickNames)
+    // console.log('----nickNames--', nickNames)
     // 让用户知道他们的昵称
     socket.emit('nameResult', {
         success: true,
@@ -72,10 +72,10 @@
      // 如果不止这一个用户在这个房间里，汇总下都是谁
      if (roomsInfo.size > 1) {
          usersInRoomSummary = '当前在房间 ' + room + '的用户有: ';
-        console.log('当前用户的昵称', nickNames[socket.id])
+        // console.log('当前用户的昵称', nickNames[socket.id])
          usersInRoom.forEach((id) => {
             if (id !== socket.id) {
-                console.log('usersInRoomSummary', usersInRoomSummary)
+                // console.log('usersInRoomSummary', usersInRoomSummary)
                 const punctuation = usersInRoomSummary ? ',' : '';
                 usersInRoomSummary += punctuation + nickNames[id];
             }
@@ -110,7 +110,7 @@
                 // 如果昵称还没被注册就注册上
 
                 let previousName = nickNames[socket.id];
-                let previousNameIndex = nickNames.indexOf(previousName);
+                let previousNameIndex = namesUsed.indexOf(previousName);
                 namesUsed.push(name);
                 delete namesUsed[previousNameIndex];
                 nickNames[socket.id] = name;
@@ -158,11 +158,11 @@
   * @param {*} currentRoom 
   * @param {*} io Socket.IO服务
   */
- function handleRoomJoining(socket, currentRoom, io) {
+ function handleRoomJoining(socket, currentRoom,nickNames,io) {
     // 添加 join 【创建/加入房间】事件的监听器
     socket.on('join', function(room) {
         socket.leave(currentRoom[socket.id]);
-        joinRoom(socket, room.newRoom, io);
+        joinRoom(socket, room.newRoom, currentRoom, nickNames, io);
     });
 }
 
