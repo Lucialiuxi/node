@@ -7,6 +7,9 @@ const path = require('path');
 // 附加的mime模块有根据文件扩展名得出MIME类型的能力
 const mime = require('mime');
 
+// Socket.IO服务器
+ const chatServer = require('./lib/chat_server');
+
 // 用来缓存文件内容的对象
 var cache = {};
 
@@ -60,4 +63,7 @@ var server = http.createServer(function(request, response) {
 
 server.listen(3000, () => {
     console.log('服务监听3000端口11');
-})
+});
+
+// 给Socket.IO服务器提供一个已经定义好的HTTP服务器，这样它就能跟HTTP服务器共享同一个TCP/IP端口了
+chatServer.listen(server);

@@ -42,3 +42,5 @@ exports.listen = function(server) {
         handleClientDisconnection(socket, namesUsed, nickNames);
     });
 };
+
+console.log('io----', io)
