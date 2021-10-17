@@ -26,16 +26,16 @@ exports.listen = function(server) {
         guestNumber = assignGuestName(socket, guestNumber, nickNames, namesUsed);
         
         // 在用户连接上来时，把他放入聊天室Lobby里
-        joinRoom(socket, 'Lobby', currentRoom, nickNames);
+        joinRoom(socket, 'Lobby', currentRoom, nickNames, io);
 
         // 处理用户的消息，更名，以及聊天室的创建和变更
         handleMessageBroadcasting(socket, nickNames);
         handleNameChangeAttempts(socket, nickNames, namesUsed, currentRoom);
-        handleRoomJoining(socket, currentRoom);
+        handleRoomJoining(socket, currentRoom, io);
 
         // 用户发出请求时，向其提供已经被占用的聊天室的列表
         socket.on('rooms', function() {
-            socket.emit('rooms', io.sockets.manager.rooms);
+            // socket.emit('rooms', io.sockets.manager.rooms);
         });
 
         // 定义用户断开连接后的清除逻辑

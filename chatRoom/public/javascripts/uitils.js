@@ -20,7 +20,7 @@
 
      // 把用户昵称跟客户端连接ID关联上
     nickNames[socket.id] = name;
-
+    console.log('----nickNames--', nickNames)
     // 让用户知道他们的昵称
     socket.emit('nameResult', {
         success: true,
@@ -40,7 +40,7 @@
   * @param {*} currentRoom 
   * @param {*} nickNames  // 储存用户昵称的 {socketId: name}
   */ 
- function joinRoom(socket, room, currentRoom, nickNames) {
+ function joinRoom(socket, room, currentRoom, nickNames, io) {
      // 让用户进入房间
      socket.join(room);
 
@@ -56,24 +56,33 @@
      });
 
      // 确定有哪些用户在这个房间里
-     let usersInRoom = io.sockets.clients(room);
+     let usersInRoomSummary = '';
+
+     const roomsInfo = io.sockets.adapter.rooms;
+     let usersInRoom = new Set([]);
+   
+     roomsInfo.forEach((value, key) => {
+        if (key === room) {
+            usersInRoom = value;
+        }
+     });
+
+    //  console.log('确定有哪些用户在这个房间里roomsInfo.size', roomsInfo.size)
 
      // 如果不止这一个用户在这个房间里，汇总下都是谁
-     if (usersInRooml.length > 1) {
-         let usersInRoomSummary = '当前在房间 ' + room + '的用户有: ';
-         for (let index in usersInRoom) {
-             let userSocketId = usersInRoom[index].id;
-             if (userSocketId !== socket.id) {
-                 if (index > 0) {
-                    usersInRoomSummary += ', ';
-                 }
-                 usersInRoomSummary += nickNames[userSocketId];
-             }
-         }
-
-         usersInRoomSummary += '.';
+     if (roomsInfo.size > 1) {
+         usersInRoomSummary = '当前在房间 ' + room + '的用户有: ';
+        console.log('当前用户的昵称', nickNames[socket.id])
+         usersInRoom.forEach((id) => {
+            if (id !== socket.id) {
+                console.log('usersInRoomSummary', usersInRoomSummary)
+                const punctuation = usersInRoomSummary ? ',' : '';
+                usersInRoomSummary += punctuation + nickNames[id];
+            }
+         });
+         if (usersInRoomSummary) usersInRoomSummary += '.';
      }
-
+    //  console.log('usersInRoomSummary--汇总', usersInRoomSummary)
      // 将房间里其他用户的汇总发送给这个用户
      socket.emit('message', { text: usersInRoomSummary });
  }
@@ -147,12 +156,13 @@
   * 加入/创建房间 【添加用户加入已有房间的逻辑，如果房间还没有的话，则创建一个放】
   * @param {*} socket 
   * @param {*} currentRoom 
+  * @param {*} io Socket.IO服务
   */
- function handleRoomJoining(socket, currentRoom) {
+ function handleRoomJoining(socket, currentRoom, io) {
     // 添加 join 【创建/加入房间】事件的监听器
     socket.on('join', function(room) {
         socket.leave(currentRoom[socket.id]);
-        joinRoom(socket, room.newRoom);
+        joinRoom(socket, room.newRoom, io);
     });
 }
 
