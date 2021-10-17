@@ -28,6 +28,20 @@ a {
     margin-right: 10px;
 }
 
+#messages .notice {
+    padding: 10px 0 10px 10%;
+    color: #858383;
+    font-size: 12px;
+}
+#messages .user-message {
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+}
+#messages .my-message {
+ text-align: end;
+ padding-right: 10px;
+}
+
 input {
     height: 30px;
     line-height: 30px;
@@ -66,5 +80,6 @@ input {
 #room-list div:hover {
    background-color: #ddd;
 }
+
 
 

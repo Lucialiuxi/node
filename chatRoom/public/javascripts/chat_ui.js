@@ -6,16 +6,13 @@ function divEscapeContentElement(message) {
 
 // 显示正常的文本数据
 function divSystemContentElement(message) {
-    return $('<div></div>').html('<li class="notice">' + message + '</li>');
+    return $('<div class="notice"></div>').text(message);
 }
 
 // 处理原始的用户输入
 function processUserInput(chatApp, socket) {
-    console.log('处理原始的用户输入', socket.id)
     let message = $('#send-message').val();
     let systemMessage;
-
-    console.log('处理原始的用户输入--message', message);
 
     if (message.charAt(0) == '/') { // 如果用户输入的内容跟以斜杠开头，将其视为聊天命令
         systemMessage = chatApp.processCommand(message);
@@ -28,7 +25,7 @@ function processUserInput(chatApp, socket) {
             $('#room').text(),
             message,
         );
-        $('#messages').append(divSystemContentElement(message));
+        $('#messages').append($('<div class="user-message my-message"></div>').text(message));
         $('#messages').scrollTop($('#message').prop('scrollHeight'));
 
     }
@@ -67,8 +64,9 @@ $(document).ready(function(){
 
 
     // 显示接收到的消息
-    socket.on('message', function(message) {
-        let newElement = $('<div></div>').text(message.text);
+    socket.on('message', function(message, system = false) {
+        const wrap = system ? '<div></div>' : '<div class="user-message"></div>';
+        let newElement = $(wrap).text(message.text);
         $('#messages').append(newElement);
     });
 
@@ -103,7 +101,6 @@ $(document).ready(function(){
 
     // 提交表单可以发送聊天消息
     $('#send-button').click(function(){
-        console.log('提交表单可以发送聊天消息')
         processUserInput(chatApp, socket);
         return false;
     });

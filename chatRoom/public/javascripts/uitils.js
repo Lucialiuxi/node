@@ -53,6 +53,7 @@
      // 让原本房间里的其他用户知道有新用户进入了房间
      socket.to(room).emit('message', {
          text: nickNames[socket.id] + '加入房间：' + room + '.',
+         system: true,
      });
 
      // 确定有哪些用户在这个房间里
@@ -73,16 +74,18 @@
      if (roomsInfo.size > 1) {
          usersInRoomSummary = '当前在房间 ' + room + '的用户有: ';
         // console.log('当前用户的昵称', nickNames[socket.id])
+        let index = 0;
          usersInRoom.forEach((id) => {
             if (id !== socket.id) {
-                // console.log('usersInRoomSummary', usersInRoomSummary)
-                const punctuation = usersInRoomSummary ? ',' : '';
+                // console.log('usersInRoomSummary', index, usersInRoomSummary)
+                const punctuation = index ? ',' : '';
                 usersInRoomSummary += punctuation + nickNames[id];
+                index ++;
             }
          });
          if (usersInRoomSummary) usersInRoomSummary += '.';
      }
-    //  console.log('usersInRoomSummary--汇总', usersInRoomSummary)
+    //  console.log('--汇总', usersInRoomSummary)
      // 将房间里其他用户的汇总发送给这个用户
      socket.emit('message', { text: usersInRoomSummary });
  }
@@ -123,6 +126,7 @@
                 // Socket.IO把消息播报给房间其他的用户
                 socket.to(currentRoom[socket.id]).emit('message', {
                     text: previousName + '昵称改为' +name + '.',
+                    system: true,
                 });
 
             } else {
@@ -147,7 +151,7 @@
      // 添加 message 【发送聊天消息】事件的监听器
     socket.on('message', function(message) {
         socket.to(message.room).emit('message', {
-            text: nickNames[socket.id] + ': ' + message.text,
+            text: nickNames[socket.id] + '  :  ' + message.text,
         })
     });
  };
