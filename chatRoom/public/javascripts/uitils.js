@@ -51,7 +51,7 @@
      socket.emit('joinResult', { room });
 
      // 让原本房间里的其他用户知道有新用户进入了房间
-     socket.broadcast.to(room).emit('message', {
+     socket.to(room).emit('message', {
          text: nickNames[socket.id] + '加入房间：' + room + '.',
      });
 
@@ -120,9 +120,9 @@
                     name,
                 });
 
-                // Socket.IO的broadcast函数是用来转发消息的
-                socket.broadcast.on(currentRoom[socket.id]).emit('message', {
-                    text: '昵称' + previousName + '更改为' +name + '.',
+                // Socket.IO把消息播报给房间其他的用户
+                socket.to(currentRoom[socket.id]).emit('message', {
+                    text: previousName + '昵称改为' +name + '.',
                 });
 
             } else {
@@ -146,7 +146,7 @@
  function handleMessageBroadcasting(socket, nickNames){
      // 添加 message 【发送聊天消息】事件的监听器
     socket.on('message', function(message) {
-        socket.broadcast.to(message.room).emit('message', {
+        socket.to(message.room).emit('message', {
             text: nickNames[socket.id] + ': ' + message.text,
         })
     });

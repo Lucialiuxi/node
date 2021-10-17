@@ -1,12 +1,12 @@
 
 // 处理显示可疑文本
-function disEscapeContentElement(message) {
+function divEscapeContentElement(message) {
     return $('<div></div>').text(message); // jquery的方法
 }
 
 // 显示正常的文本数据
 function divSystemContentElement(message) {
-    return $('<div></div>').html('<li>' + message + '</li>');
+    return $('<div></div>').html('<li class="notice">' + message + '</li>');
 }
 
 // 处理原始的用户输入
@@ -68,8 +68,8 @@ $(document).ready(function(){
 
     // 显示接收到的消息
     socket.on('message', function(message) {
-        let newElement = $('<div></div>').text(message.test);
-        $('#message').append(newElement);
+        let newElement = $('<div></div>').text(message.text);
+        $('#messages').append(newElement);
     });
 
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
         for(let room in rooms) {
             room = room.substring(1, room.length);
             if (room !== '') {
-                $('#room-list').append(divSystemContentElement(room));
+                $('#room-list').append(divEscapeContentElement(room));
             }
         }
 
@@ -95,9 +95,9 @@ $(document).ready(function(){
 
 
     // 定期请求可用房间列表
-    // setInterval(function() {
-    //     socket.emit('rooms');
-    // }, 1000);
+    setInterval(function() {
+        socket.emit('rooms');
+    }, 1000);
 
     $('#send-message').focus();
 
