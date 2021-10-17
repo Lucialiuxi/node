@@ -6,7 +6,7 @@ const {
     handleMessageBroadcasting, // 发送聊天消息
     handleRoomJoining, // 加入/创建房间
     handleClientDisconnection, // 用户断开连接
-} = require('./utils');
+} = require('../public/javascripts/uitils');
 
 let io;
 let guestNumber = 1; // 程序自动分配的昵称基本都是 'Guest'+guestNumber , 有新用户连接进来guestNumber就网上增长
@@ -17,8 +17,8 @@ let currentRoom = {}; // 储存聊天室名称的 {socketId: roomName}
 
 // 启动socket.io服务器
 exports.listen = function(server) {
-    io = socketio.listen(server); // 启动Socket.IO服务，允许它搭载在已有的HTTP服务器上
-    io.set('log level', 1);
+    io = socketio(server); // 启动Socket.IO服务，允许它搭载在已有的HTTP服务器上
+    // io.set('log level', 1);
 
      // 定义每个用户连接的处理逻辑
     io.sockets.on('connection', function(socket) {
@@ -42,5 +42,3 @@ exports.listen = function(server) {
         handleClientDisconnection(socket, namesUsed, nickNames);
     });
 };
-
-console.log('io----', io)

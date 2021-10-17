@@ -5,6 +5,7 @@ const Chat = function(socket) {
 
 // 发送聊天消息
 Chat.prototype.sendMessage = function(room, text) {
+    console.log('发送聊天消息')
     let message = { room, text };
     this.socket.emit('message', message);
 }
