@@ -14,9 +14,19 @@ const server = net.createServer(connection => {
     console.log(`现在开始监听文件${filename}的变化`);
 
     // 设置监听
-    const watcher = fs.watch(filename, () => {
+    const watcher = fs.watchFile(filename, (current, previous) => {
+        let type = 'watching';
+        let timeStamp = new Date();
+        if (current.mtime !== previous.mtime) {
+            type = 'changed';
+            timeStamp = current.mtime;
+        }
         // 建立连接时发送给客户端
-        connection.write(`文件变化了：${new Date()}`);
+        const content = JSON.stringify({
+            type,
+            timeStamp,
+        })
+        connection.write(content + '\n');
     });
 
     connection.on('close', () => {
@@ -26,16 +36,14 @@ const server = net.createServer(connection => {
     });
 });
 
-server.listen(60300, () => {
-    console.log('监听60300端口');
+server.listen(4000, () => {
+    console.log('监听4000端口');
 });
 
 /**command: [都在WSL终端执行]
- 
-    watch tail target.txt
 
-    node net-watcher.js target.txt
+    node net-watcher-json-service.js target.txt
 
-    nc 127.0.0.1 60300
+    nc 127.0.0.1 4000
 
  */
