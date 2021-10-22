@@ -26,6 +26,6 @@ const server = net.createServer(connection => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('监听3000端口');
+server.listen(60300, () => {
+    console.log('监听60300端口');
 });
