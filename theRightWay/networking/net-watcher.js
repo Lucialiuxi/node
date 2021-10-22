@@ -29,3 +29,13 @@ const server = net.createServer(connection => {
 server.listen(60300, () => {
     console.log('监听60300端口');
 });
+
+/**command: [都在WSL终端执行]
+ 
+    watch -n 1 touch target.txt
+
+    node net-watcher.js target.txt
+
+    nc 127.0.0.1 60300
+
+ */
