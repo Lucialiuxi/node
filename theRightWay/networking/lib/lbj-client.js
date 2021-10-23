@@ -11,8 +11,6 @@ class LDJClient extends EventEmitter {
         stream.on('data', data => {
             buffer += data;
             let bundary = buffer.indexOf('\n');
-            console.log('buffer---', buffer);
-            console.log('bundary---', bundary);
 
             while(bundary !== -1) {
                 const input = buffer.substring(0, bundary); // \n 之前的部分
