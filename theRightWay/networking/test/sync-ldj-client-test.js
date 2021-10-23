@@ -21,7 +21,9 @@ describe('LDJClient', () => {
             assert.deepEqual(message, { foo: 'bar' });
         });
 
-        stream.emit('data', '{"foo": "bar"}\n');
+        // 将消息拆分成2个部分，依次发出
+        stream.emit('data', '{"foo":');
+        process.nextTick(() => stream.emit('data', '"bar"}\n'));
         done();
     });
 });
