@@ -11,6 +11,7 @@ const requester = zmq.socket('req');
 requester.on('message', data => {
     const response = JSON.parse(data);
     console.log(`接收到响应：`, response);
+    
 });
 
 requester.connect('tcp://localhost:60401');
