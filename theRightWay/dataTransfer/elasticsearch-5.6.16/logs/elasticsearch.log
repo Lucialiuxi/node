@@ -1,0 +1,30 @@
+[2021-10-25T19:40:47,848][INFO ][o.e.n.Node               ] [] initializing ...
+[2021-10-25T19:40:48,399][INFO ][o.e.e.NodeEnvironment    ] [X6QPvXN] using [1] data paths, mounts [[(D:)]], net usable_space [903gb], net total_space [929.5gb], spins? [unknown], types [NTFS]
+[2021-10-25T19:40:48,402][INFO ][o.e.e.NodeEnvironment    ] [X6QPvXN] heap size [1.9gb], compressed ordinary object pointers [true]
+[2021-10-25T19:40:48,416][INFO ][o.e.n.Node               ] node name [X6QPvXN] derived from node ID [X6QPvXNJRqKDDKEg9rBySw]; set [node.name] to override
+[2021-10-25T19:40:48,419][INFO ][o.e.n.Node               ] version[5.6.16], pid[8736], build[3a740d1/2019-03-13T15:33:36.565Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_311/25.311-b11]
+[2021-10-25T19:40:48,423][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Delasticsearch, -Des.path.home=D:\githubFiles\nodeLearning\theRightWay\dataTransfer\elasticsearch-5.6.16]
+[2021-10-25T19:40:50,980][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [aggs-matrix-stats]
+[2021-10-25T19:40:50,981][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [ingest-common]
+[2021-10-25T19:40:50,981][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-expression]
+[2021-10-25T19:40:50,982][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-groovy]
+[2021-10-25T19:40:50,982][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-mustache]
+[2021-10-25T19:40:50,983][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-painless]
+[2021-10-25T19:40:50,983][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [parent-join]
+[2021-10-25T19:40:50,984][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [percolator]
+[2021-10-25T19:40:50,984][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [reindex]
+[2021-10-25T19:40:50,985][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [transport-netty3]
+[2021-10-25T19:40:50,985][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [transport-netty4]
+[2021-10-25T19:40:50,987][INFO ][o.e.p.PluginsService     ] [X6QPvXN] no plugins loaded
+[2021-10-25T19:40:54,236][INFO ][o.e.d.DiscoveryModule    ] [X6QPvXN] using discovery type [zen]
+[2021-10-25T19:40:54,689][INFO ][o.e.n.Node               ] initialized
+[2021-10-25T19:40:54,690][INFO ][o.e.n.Node               ] [X6QPvXN] starting ...
+[2021-10-25T19:40:56,248][INFO ][o.e.t.TransportService   ] [X6QPvXN] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2021-10-25T19:40:59,369][INFO ][o.e.c.s.ClusterService   ] [X6QPvXN] new_master {X6QPvXN}{X6QPvXNJRqKDDKEg9rBySw}{xUo5Nre7Rv2EdC_I_IcF1g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2021-10-25T19:40:59,459][INFO ][o.e.g.GatewayService     ] [X6QPvXN] recovered [0] indices into cluster_state
+[2021-10-25T19:41:00,272][INFO ][o.e.h.n.Netty4HttpServerTransport] [X6QPvXN] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2021-10-25T19:41:00,272][INFO ][o.e.n.Node               ] [X6QPvXN] started
+[2021-10-25T20:06:41,188][INFO ][o.e.n.Node               ] [X6QPvXN] stopping ...
+[2021-10-25T20:06:41,255][INFO ][o.e.n.Node               ] [X6QPvXN] stopped
+[2021-10-25T20:06:41,256][INFO ][o.e.n.Node               ] [X6QPvXN] closing ...
+[2021-10-25T20:06:41,265][INFO ][o.e.n.Node               ] [X6QPvXN] closed

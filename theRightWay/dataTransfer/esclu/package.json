@@ -1,0 +1,21 @@
+{
+  "name": "esclu",
+  "version": "1.0.0",
+  "description": "Elasticsearch Command line Utilites",
+  "main": "index.js",
+  "scripts": {
+    "esclu": "node ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "request": "^2.88.2"
+  },
+  "bin": {
+    "esclu": "node ./index.js"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}
