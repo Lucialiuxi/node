@@ -1,30 +1,128 @@
-[2021-10-25T19:40:47,848][INFO ][o.e.n.Node               ] [] initializing ...
-[2021-10-25T19:40:48,399][INFO ][o.e.e.NodeEnvironment    ] [X6QPvXN] using [1] data paths, mounts [[(D:)]], net usable_space [903gb], net total_space [929.5gb], spins? [unknown], types [NTFS]
-[2021-10-25T19:40:48,402][INFO ][o.e.e.NodeEnvironment    ] [X6QPvXN] heap size [1.9gb], compressed ordinary object pointers [true]
-[2021-10-25T19:40:48,416][INFO ][o.e.n.Node               ] node name [X6QPvXN] derived from node ID [X6QPvXNJRqKDDKEg9rBySw]; set [node.name] to override
-[2021-10-25T19:40:48,419][INFO ][o.e.n.Node               ] version[5.6.16], pid[8736], build[3a740d1/2019-03-13T15:33:36.565Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_311/25.311-b11]
-[2021-10-25T19:40:48,423][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Delasticsearch, -Des.path.home=D:\githubFiles\nodeLearning\theRightWay\dataTransfer\elasticsearch-5.6.16]
-[2021-10-25T19:40:50,980][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [aggs-matrix-stats]
-[2021-10-25T19:40:50,981][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [ingest-common]
-[2021-10-25T19:40:50,981][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-expression]
-[2021-10-25T19:40:50,982][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-groovy]
-[2021-10-25T19:40:50,982][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-mustache]
-[2021-10-25T19:40:50,983][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [lang-painless]
-[2021-10-25T19:40:50,983][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [parent-join]
-[2021-10-25T19:40:50,984][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [percolator]
-[2021-10-25T19:40:50,984][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [reindex]
-[2021-10-25T19:40:50,985][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [transport-netty3]
-[2021-10-25T19:40:50,985][INFO ][o.e.p.PluginsService     ] [X6QPvXN] loaded module [transport-netty4]
-[2021-10-25T19:40:50,987][INFO ][o.e.p.PluginsService     ] [X6QPvXN] no plugins loaded
-[2021-10-25T19:40:54,236][INFO ][o.e.d.DiscoveryModule    ] [X6QPvXN] using discovery type [zen]
-[2021-10-25T19:40:54,689][INFO ][o.e.n.Node               ] initialized
-[2021-10-25T19:40:54,690][INFO ][o.e.n.Node               ] [X6QPvXN] starting ...
-[2021-10-25T19:40:56,248][INFO ][o.e.t.TransportService   ] [X6QPvXN] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2021-10-25T19:40:59,369][INFO ][o.e.c.s.ClusterService   ] [X6QPvXN] new_master {X6QPvXN}{X6QPvXNJRqKDDKEg9rBySw}{xUo5Nre7Rv2EdC_I_IcF1g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
-[2021-10-25T19:40:59,459][INFO ][o.e.g.GatewayService     ] [X6QPvXN] recovered [0] indices into cluster_state
-[2021-10-25T19:41:00,272][INFO ][o.e.h.n.Netty4HttpServerTransport] [X6QPvXN] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2021-10-25T19:41:00,272][INFO ][o.e.n.Node               ] [X6QPvXN] started
-[2021-10-25T20:06:41,188][INFO ][o.e.n.Node               ] [X6QPvXN] stopping ...
-[2021-10-25T20:06:41,255][INFO ][o.e.n.Node               ] [X6QPvXN] stopped
-[2021-10-25T20:06:41,256][INFO ][o.e.n.Node               ] [X6QPvXN] closing ...
-[2021-10-25T20:06:41,265][INFO ][o.e.n.Node               ] [X6QPvXN] closed
+[2021-10-29T16:54:55,936][INFO ][o.e.n.Node               ] [] initializing ...
+[2021-10-29T16:54:56,152][INFO ][o.e.e.NodeEnvironment    ] [RMG0NKT] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [884.9gb], net total_space [929.5gb], spins? [possibly], types [9p]
+[2021-10-29T16:54:56,153][INFO ][o.e.e.NodeEnvironment    ] [RMG0NKT] heap size [1.9gb], compressed ordinary object pointers [true]
+[2021-10-29T16:54:56,167][INFO ][o.e.n.Node               ] node name [RMG0NKT] derived from node ID [RMG0NKTzRuuRkknttdvReg]; set [node.name] to override
+[2021-10-29T16:54:56,168][INFO ][o.e.n.Node               ] version[5.6.16], pid[34], build[3a740d1/2019-03-13T15:33:36.565Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Ubuntu/OpenJDK 64-Bit Server VM/11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04]
+[2021-10-29T16:54:56,169][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16]
+[2021-10-29T16:54:57,789][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [aggs-matrix-stats]
+[2021-10-29T16:54:57,789][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [ingest-common]
+[2021-10-29T16:54:57,790][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-expression]
+[2021-10-29T16:54:57,790][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-groovy]
+[2021-10-29T16:54:57,790][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-mustache]
+[2021-10-29T16:54:57,791][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-painless]
+[2021-10-29T16:54:57,791][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [parent-join]
+[2021-10-29T16:54:57,792][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [percolator]
+[2021-10-29T16:54:57,793][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [reindex]
+[2021-10-29T16:54:57,793][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [transport-netty3]
+[2021-10-29T16:54:57,794][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [transport-netty4]
+[2021-10-29T16:54:57,795][INFO ][o.e.p.PluginsService     ] [RMG0NKT] no plugins loaded
+[2021-10-29T16:55:00,045][INFO ][o.e.d.DiscoveryModule    ] [RMG0NKT] using discovery type [zen]
+[2021-10-29T16:55:00,776][INFO ][o.e.n.Node               ] initialized
+[2021-10-29T16:55:00,777][INFO ][o.e.n.Node               ] [RMG0NKT] starting ...
+[2021-10-29T16:55:01,085][INFO ][o.e.t.TransportService   ] [RMG0NKT] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-10-29T16:55:01,116][WARN ][o.e.b.BootstrapChecks    ] [RMG0NKT] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2021-10-29T16:55:01,117][WARN ][o.e.b.BootstrapChecks    ] [RMG0NKT] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2021-10-29T16:55:04,251][INFO ][o.e.c.s.ClusterService   ] [RMG0NKT] new_master {RMG0NKT}{RMG0NKTzRuuRkknttdvReg}{rP6moZDURmuAKiY5QAM0SA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2021-10-29T16:55:04,299][INFO ][o.e.h.n.Netty4HttpServerTransport] [RMG0NKT] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-10-29T16:55:04,301][INFO ][o.e.n.Node               ] [RMG0NKT] started
+[2021-10-29T16:55:04,401][INFO ][o.e.g.GatewayService     ] [RMG0NKT] recovered [0] indices into cluster_state
+[2021-10-29T16:58:37,484][INFO ][o.e.n.Node               ] [] initializing ...
+[2021-10-29T16:58:37,630][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.env.NodeEnvironment.<init>(NodeEnvironment.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:245) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:342) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:132) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:123) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:70) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:134) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:91) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:84) [elasticsearch-5.6.16.jar:5.6.16]
+[2021-10-29T16:58:37,655][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:123) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:70) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:134) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:91) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:84) ~[elasticsearch-5.6.16.jar:5.6.16]
+Caused by: java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.env.NodeEnvironment.<init>(NodeEnvironment.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:245) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:342) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:132) ~[elasticsearch-5.6.16.jar:5.6.16]
+	... 6 more
+[2021-10-29T20:00:34,336][INFO ][o.e.n.Node               ] [] initializing ...
+[2021-10-29T20:00:34,490][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.env.NodeEnvironment.<init>(NodeEnvironment.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:245) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:342) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:132) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:123) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:70) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:134) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:91) [elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:84) [elasticsearch-5.6.16.jar:5.6.16]
+[2021-10-29T20:00:34,538][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:123) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:70) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:134) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:91) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:84) ~[elasticsearch-5.6.16.jar:5.6.16]
+Caused by: java.lang.IllegalStateException: failed to obtain node locks, tried [[/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16/data/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+	at org.elasticsearch.env.NodeEnvironment.<init>(NodeEnvironment.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:265) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.node.Node.<init>(Node.java:245) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:233) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:342) ~[elasticsearch-5.6.16.jar:5.6.16]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:132) ~[elasticsearch-5.6.16.jar:5.6.16]
+	... 6 more
+[2021-10-29T20:04:44,346][INFO ][o.e.n.Node               ] [RMG0NKT] stopping ...
+[2021-10-29T20:04:44,401][INFO ][o.e.n.Node               ] [RMG0NKT] stopped
+[2021-10-29T20:04:44,402][INFO ][o.e.n.Node               ] [RMG0NKT] closing ...
+[2021-10-29T20:04:44,416][INFO ][o.e.n.Node               ] [RMG0NKT] closed
+[2021-10-29T20:04:50,156][INFO ][o.e.n.Node               ] [] initializing ...
+[2021-10-29T20:04:50,453][INFO ][o.e.e.NodeEnvironment    ] [RMG0NKT] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [884.6gb], net total_space [929.5gb], spins? [possibly], types [9p]
+[2021-10-29T20:04:50,456][INFO ][o.e.e.NodeEnvironment    ] [RMG0NKT] heap size [1.9gb], compressed ordinary object pointers [true]
+[2021-10-29T20:04:50,511][INFO ][o.e.n.Node               ] node name [RMG0NKT] derived from node ID [RMG0NKTzRuuRkknttdvReg]; set [node.name] to override
+[2021-10-29T20:04:50,513][INFO ][o.e.n.Node               ] version[5.6.16], pid[609], build[3a740d1/2019-03-13T15:33:36.565Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Ubuntu/OpenJDK 64-Bit Server VM/11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04]
+[2021-10-29T20:04:50,514][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/mnt/d/githubFiles/nodeLearning/theRightWay/dataTransfer/elasticsearch-5.6.16]
+[2021-10-29T20:04:53,745][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [aggs-matrix-stats]
+[2021-10-29T20:04:53,746][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [ingest-common]
+[2021-10-29T20:04:53,746][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-expression]
+[2021-10-29T20:04:53,747][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-groovy]
+[2021-10-29T20:04:53,748][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-mustache]
+[2021-10-29T20:04:53,748][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [lang-painless]
+[2021-10-29T20:04:53,749][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [parent-join]
+[2021-10-29T20:04:53,750][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [percolator]
+[2021-10-29T20:04:53,751][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [reindex]
+[2021-10-29T20:04:53,752][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [transport-netty3]
+[2021-10-29T20:04:53,753][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded module [transport-netty4]
+[2021-10-29T20:04:53,754][INFO ][o.e.p.PluginsService     ] [RMG0NKT] loaded plugin [analysis-icu]
+[2021-10-29T20:04:56,170][INFO ][o.e.d.DiscoveryModule    ] [RMG0NKT] using discovery type [zen]
+[2021-10-29T20:04:57,052][INFO ][o.e.n.Node               ] initialized
+[2021-10-29T20:04:57,053][INFO ][o.e.n.Node               ] [RMG0NKT] starting ...
+[2021-10-29T20:04:57,401][INFO ][o.e.t.TransportService   ] [RMG0NKT] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-10-29T20:04:57,432][WARN ][o.e.b.BootstrapChecks    ] [RMG0NKT] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2021-10-29T20:04:57,432][WARN ][o.e.b.BootstrapChecks    ] [RMG0NKT] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2021-10-29T20:05:00,549][INFO ][o.e.c.s.ClusterService   ] [RMG0NKT] new_master {RMG0NKT}{RMG0NKTzRuuRkknttdvReg}{o_r8cSemSLq-BXQ7kGXtVA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2021-10-29T20:05:00,604][INFO ][o.e.h.n.Netty4HttpServerTransport] [RMG0NKT] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-10-29T20:05:00,605][INFO ][o.e.n.Node               ] [RMG0NKT] started
+[2021-10-29T20:05:00,737][INFO ][o.e.g.GatewayService     ] [RMG0NKT] recovered [0] indices into cluster_state
